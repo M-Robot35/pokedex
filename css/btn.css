@@ -1,0 +1,117 @@
+
+
+:root{
+    --conteiner_size_widht:65px;
+    --conteiner_size_height:35px;
+    --bacgroun_conteiner:rgb(157, 192, 198);
+    --background_conteiner_checked:rgba(65, 233, 245, 0.486);
+    --btn_radiuns: 25px;
+    --btn_backgroud: red;
+    --btn_background_2: rgba(55, 255, 0, 0.849);
+    --transitin_speed : 0.5s;
+}
+
+.btn-controler {
+    position: absolute;
+    top: 16%;
+    left: 65%;
+    
+}
+
+.online {
+    display: none;
+}
+
+.button-conteiner {
+    width: var(--conteiner_size_widht);
+    height: var(--conteiner_size_height);
+    border: 1px solid black;
+    border-radius: 15px; 
+    align-items: center; 
+    position: relative;  
+    display: flex;
+    background: var(--bacgroun_conteiner);
+    box-shadow: inset -2px 2px 3px rgba(0, 0, 0, 0.39) ;
+}
+
+.slider {
+    position: absolute;
+    width: var(--btn_radiuns);
+    height: var(--btn_radiuns);
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-left: 1px;
+    background-color:var(--btn_backgroud);
+    transition: all var(--transitin_speed) ease-in-out;
+    pointer-events: none;    
+    box-shadow: 2px 1px 5px black;
+}
+
+.online:checked ~ .button-conteiner .slider {
+    position: absolute;
+    width: var(--btn_radiuns);
+    height: var(--btn_radiuns);
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-left: 55%;
+    background-color: var(--btn_background_2);
+    box-shadow: -2px 1px 5px rgba(0, 0, 0, 0.635); 
+
+}
+
+.online:checked ~ .button-conteiner {
+    width: 65px;
+    height: 35px;
+    border: 1px solid black;
+    border-radius: 15px; 
+    align-items: center; 
+    position: relative;  
+    display: flex;
+    transition: all var(--transitin_speed) ;
+    background: white;
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.39);
+    background-color: var(--background_conteiner_checked);  
+
+}
+
+@media only screen and (max-width: 400px){
+    :root {
+        --conteiner_width: 42px;
+        --conteiner_height: 25px;
+        --btn_width: 20px;
+        --btn_height: 20px;
+
+    }
+    .btn-controler {
+        position: absolute;
+        top: 14%;
+        /* left: 55%; */
+        left: 63%;
+        /* background-color: aqua; */
+
+    /* }
+    .button-conteiner {
+        width:var(--conteiner_width);
+        height: var(--conteiner_height);        
+    }
+    
+    .online:checked ~ .button-conteiner {   
+        width: var(--conteiner_width);
+        height: var(--conteiner_height);
+        border: 1px solid black;
+        
+    }
+    .online:checked ~ .button-conteiner .slider {
+        position: absolute;
+        width: var(--btn_width);
+        height: var(--btn_height);
+    }
+    .slider {
+        position: absolute;
+        width: var(--btn_width);
+        height: var(--btn_height);    
+    } */
+
+} 
+
+
