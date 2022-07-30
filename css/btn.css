@@ -85,33 +85,26 @@
     .btn-controler {
         position: absolute;
         top: 14%;
-        /* left: 55%; */
         left: 63%;
-        /* background-color: aqua; */
-
-    /* }
-    .button-conteiner {
-        width:var(--conteiner_width);
-        height: var(--conteiner_height);        
-    }
-    
-    .online:checked ~ .button-conteiner {   
-        width: var(--conteiner_width);
-        height: var(--conteiner_height);
-        border: 1px solid black;
-        
-    }
-    .online:checked ~ .button-conteiner .slider {
-        position: absolute;
-        width: var(--btn_width);
-        height: var(--btn_height);
-    }
-    .slider {
-        position: absolute;
-        width: var(--btn_width);
-        height: var(--btn_height);    
-    } */
 
 } 
 
+@media only screen and (max-width: 300px){
+    .button-conteiner {
+        width: 55px;
+        height: 32px;        
+    }
+          
+    .btn-controler {
+        position: absolute;
+        top: 14%;
+        left: 60%; 
+    }     
+    .online:checked ~ .button-conteiner {
+        width: 55px;
+        height: 32px;      
+    
+    }       
+     
 
+}

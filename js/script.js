@@ -1,3 +1,5 @@
+
+
 let PokeNumero= document.querySelector('.pokemon-number');
 let PokeNome= document.querySelector('.pokemon-name');
 let PokemonImg = document.querySelector('.pokemon-img');
@@ -10,6 +12,15 @@ const btn_prev = document.querySelector('.btn-prev');
 const btn_next = document.querySelector('.btn-next');
 
 let indexPokemon = 1;
+
+// COLOCA O STATUS NA TELA
+const online = document.querySelector('.online');
+
+let status_nome = document.querySelector('.nome-res');
+let status_type = document.querySelector('.type-res');
+let status_number = document.querySelector('.number-res');
+
+
 
 // api pokemons 
 const fatchPokemon = async (pokemon)=>{
@@ -37,10 +48,17 @@ const renderPokemon = async (pokemon)=> {
             
         indexPokemon = data.id;
 
+        // retornos
+        status_nome.innerHTML = data.name;
+        status_type.innerHTML = data['types']['0']['type']['name'];
+        status_number.innerHTML = data.id;
+
     } else {
         console.log('Busca invalida o Pokemon Não existe')
-        notFound()
-    
+        status_nome.innerHTML =' Null';
+        status_type.innerHTML = 'Null';
+        status_number.innerHTML = 'Null';  
+        notFound()  
     }    
 }
 
@@ -76,9 +94,16 @@ btn_next.addEventListener('click', ()=>{
 
 renderPokemon(indexPokemon)
 
+// COLOCA O STATUS NA TELA
 
-
-
-
-
+online.addEventListener('change',(event)=>{
+    event.preventDefault()
+    let statusPokemon = document.querySelector('.conteiner-status');
+    if (event.target.checked){
+        statusPokemon.style.display = 'block'
+    }
+    else{
+        statusPokemon.style.display = 'none'
+    }
+})
 
